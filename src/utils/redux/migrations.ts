@@ -16,6 +16,12 @@ export const mainStoreMigrations = {
       draft.announcement = announcementsInitialState;
     }),
   2: identity,
+  3: (state: any) =>
+    produce(state, (draft: any) => {
+      Object.entries(draft.beacon).forEach(([dAppId, connectionInfo]: [string, any]) => {
+        draft.beacon[dAppId] = { [connectionInfo.accountPkh]: connectionInfo.networkType };
+      });
+    }),
 } as any;
 
 export const accountsMigrations = {

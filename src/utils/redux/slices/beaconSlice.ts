@@ -14,7 +14,7 @@ export const initialState: State = {};
  * dApps are identified by dAppId (a unique string id generated from dApp public key).
  * Connection is identified by a pair of (dAppId, accountPkh).
  *
- * NetworkType is stored for convinience as dApps for different networks will have diferent dAppIds.
+ * NetworkType is stored for convenience as dApps for different networks will have different dAppIds.
  */
 export const beaconSlice = createSlice({
   name: "beacon",
